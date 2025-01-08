@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 export const TaskContext = createContext(null);
 export const TaskDispatchContext = createContext(null);
@@ -15,6 +15,16 @@ export function TaskProvider({ children }) {
   );
 }
 
+//custom hooks
+export function useTasks() {
+  return useContext(TaskContext);
+}
+
+//custom hooks
+
+export function useTasksDispatch() {
+  return useContext(TaskDispatchContext);
+}
 function tasksReducer(tasks, action) {
   switch (action.type) {
     case "added": {
