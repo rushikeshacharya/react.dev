@@ -16,7 +16,7 @@ export default function AddTask() {
           setText("");
           dispatch({
             type: "added",
-            id: nextId,
+            id: nextId++,
             text: text,
           });
         }}
