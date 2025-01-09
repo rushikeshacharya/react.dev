@@ -12,6 +12,10 @@ function VideoPlayer({ src, isPlaying }) {
       console.log("Paused....");
     }
   }, [isPlaying]);
+
+  /**
+   * ref object has a stable identity: React guarantees you’ll always get the same object from the same useRef call on every render. It never changes, so it will never by itself cause the Effect to re-run. Therefore, it does not matter whether you include it or not
+   */
   return <video ref={ref} src={src} loop playsInline />;
 }
 
