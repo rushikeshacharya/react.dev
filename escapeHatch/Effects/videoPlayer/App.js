@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import styled from "styled-components";
+import { ReactComponent as Logo} from './tiger.svg';
 
 function VideoPlayer({ src, isPlaying }) {
   const ref = useRef(null);
@@ -8,7 +10,6 @@ function VideoPlayer({ src, isPlaying }) {
       console.log("Playing....");
       ref.current.play();
     } else {
-      ref.current.pause();
       console.log("Paused....");
     }
   }, [isPlaying]);
@@ -23,16 +24,28 @@ export default function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [text, setText] = useState("");
 
+  const Button = styled.button`
+    ackground: transparent;
+    border-radius: 3px;
+    border: 2px solid #bf4f74;
+    color: #bf4f74;
+    margin: 0.5em 1em;
+    padding: 0.25em 1em;
+  `;
+
   return (
     <>
       <input value={text} onChange={(e) => setText(e.target.value)}></input>
-      <button onClick={() => setIsPlaying(!isPlaying)}>
-        {!isPlaying ? "Play" : "Pause"}
-      </button>
+      <Button onClick={() => setIsPlaying(!isPlaying)}>
+        {!isPlaying ? "Playyy" : "Pause"}
+      </Button>
       <VideoPlayer
         isPlaying={isPlaying}
         src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
       />
+      <div>
+        <Logo />
+      </div>
     </>
   );
 }
