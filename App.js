@@ -1,27 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 const heading = React.createElement(
-    "h1",
-    {
-      id: "title",
-      style: {
-        background:"grey",
-      },
-      className:"title"
+  "h1",
+  {
+    id: "title",
+    style: {
+      background: "grey",
     },
-    "Welcome to Hands on React...!"
-  );
+    className: "title",
+  },
+  "Welcome to Hands on React...!"
+);
 
-  
-  const container = React.createElement(
-    "div",
-    {
-      id: "container",
-    },
-    [heading]
-  );
-  
+const container = React.createElement(
+  "div",
+  {
+    id: "container",
+  },
+  [heading]
+);
 
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(container);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(container);
