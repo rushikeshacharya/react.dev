@@ -1,29 +1,25 @@
-import { useReducer } from "react";
 import Header from "./components/Header";
 import Input from "./components/Input";
 import ToDoList from "./components/ToDoList";
-
 import "./App.css";
-import { reducer } from "./utils/reducer";
 
-const initialToDos = [
-  { id: 1, text: "To Do 1", completed: false },
-  { id: 2, text: "To Do 2", completed: true },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { add, remove, toggle } from "./features/todo/todoSlice";
 
 const App = () => {
-  const [todos, dispatch] = useReducer(reducer, initialToDos);
+  const todos = useSelector((state) => state.todo.todos);
+  const dispatch = useDispatch();
 
   const addTodo = (text) => {
-    dispatch({ type: "add", text: text });
+    dispatch(add(text));
   };
 
   const deleteTodo = (id) => {
-    dispatch({ type: "delete", id: id });
+    dispatch(remove(id));
   };
 
   const toggleTodo = (id) => {
-    dispatch({ type: "toggle", id: id });
+    dispatch(toggle(id));
   };
 
   return (
@@ -34,6 +30,48 @@ const App = () => {
     </div>
   );
 };
+
+/**
+ * App with userReducer
+ */
+// import { useReducer } from "react";
+// import Header from "./components/Header";
+// import Input from "./components/Input";
+// import ToDoList from "./components/ToDoList";
+
+// import "./App.css";
+// import { reducer } from "./utils/reducer";
+
+// const initialToDos = [
+//   { id: 1, text: "To Do 1", completed: false },
+//   { id: 2, text: "To Do 2", completed: true },
+// ];
+
+// const App = () => {
+//   const [todos, dispatch] = useReducer(reducer, initialToDos);
+
+//   const addTodo = (text) => {
+//     dispatch({ type: "add", text: text });
+//   };
+
+//   const deleteTodo = (id) => {
+//     dispatch({ type: "delete", id: id });
+//   };
+
+//   const toggleTodo = (id) => {
+//     dispatch({ type: "toggle", id: id });
+//   };
+
+//   return (
+//     <Provider store={store}>
+//       <div className="flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-gray-300 min-h-screen">
+//         <Header />
+//         <Input onAdd={addTodo} />
+//         <ToDoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />
+//       </div>
+//     </Provider>
+//   );
+// };
 
 /**
  * App with useState
