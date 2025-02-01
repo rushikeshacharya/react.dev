@@ -4,16 +4,23 @@
   "description": "Hands on react",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
   },
   "author": "Rushikesh Acharya",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.13.3",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "webpack-cli": "^6.0.1"
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router": "^7.1.3",
+    "react-router-dom": "^7.1.3",
+    "react-scripts": "^5.0.1",
+    "styled-components": "^6.1.14",
+    "vite": "^6.0.11"
   }
 }
