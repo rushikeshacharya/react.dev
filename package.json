@@ -12,6 +12,7 @@
   "devDependencies": {
     "parcel": "^2.13.3",
     "process": "^0.11.10",
+    "tailwindcss": "^3.4.17",
     "webpack-cli": "^6.0.1"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "react-router": "^7.1.3",
     "react-router-dom": "^7.1.3",
     "react-scripts": "^5.0.1",
+    "recoil": "^0.7.7",
     "styled-components": "^6.1.14",
     "vite": "^6.0.11"
   }
